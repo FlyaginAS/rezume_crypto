@@ -151,19 +151,18 @@
     font-family: inherit;
     justify-self: flex-end;
     width: 205px;
-    height: 50px;
     grid-row: 2/3;
-
     background: #11b3fe;
     border: none;
     border-radius: 5px;
-
     font-size: 16px;
-    line-height: 120%;
-
+    padding-top: 5px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-
     color: #ffffff;
+    &:hover {
+      cursor: pointer;
+      background: #0095e0;
+    }
   }
 }
