@@ -1,0 +1,45 @@
+@import '../../scss/abstracts/_functions.scss';
+@import '../../scss/abstracts/_mixins.scss';
+@import '../../scss/abstracts/_variables.scss';
+@import '../../scss/base/_animations.scss';
+@import '../../scss/base/_base.scss';
+@import '../../scss/base/_typography.scss';
+@import '../../scss/base/_utilities.scss';
+
+//***********************************************************
+.exchange-block {
+  display: grid;
+  &__address {
+    font-size: 16px;
+    line-height: 23px;
+    grid-row: 1/2;
+    margin-bottom: 8px;
+  }
+  &__input {
+    grid-row: 2/3;
+    width: 723px;
+    height: 50px;
+    background: $input-background-color;
+    border: 1px solid #e3ebef;
+    border-radius: 5px;
+  }
+  &__exchange {
+    line-height: 1;
+    font-family: inherit;
+    justify-self: flex-end;
+    width: 205px;
+    grid-row: 2/3;
+    background: #11b3fe;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-top: 5px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+    &:hover {
+      cursor: pointer;
+      background: #0095e0;
+    }
+  }
+}

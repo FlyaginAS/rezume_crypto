@@ -1,0 +1,92 @@
+@import '../../scss/abstracts/_functions.scss';
+@import '../../scss/abstracts/_mixins.scss';
+@import '../../scss/abstracts/_variables.scss';
+@import '../../scss/base/_animations.scss';
+@import '../../scss/base/_base.scss';
+@import '../../scss/base/_typography.scss';
+@import '../../scss/base/_utilities.scss';
+
+//***********************************************************
+.exchanger {
+  grid-row-start: span 1;
+  background: #f6f7f8;
+  border: 1px solid #e3ebef;
+  box-sizing: border-box;
+  border-radius: 5px;
+  &__input-value {
+  }
+  &__input-search {
+  }
+  &__list {
+  }
+}
+//***********************************************************
+.input-value {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 23px;
+  border-bottom: 1px solid #e3ebef;
+  height: 50px;
+  &__value {
+    margin-right: auto;
+    margin-left: 16px;
+  }
+  &__image-ticker {
+    background: #11b3fe;
+  }
+  &__ticker {
+    text-transform: uppercase;
+    margin-left: 15px;
+    margin-right: 33px;
+  }
+  &__image-arrow-down {
+    margin-right: 11px;
+  }
+}
+//***********************************************************
+.input-search {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 23px;
+  border-bottom: 1px solid #e3ebef;
+  height: 50px;
+  &__value {
+    font-size: 16px;
+    line-height: 23px;
+    color: #80a2b6;
+    margin-left: 16px;
+    margin-right: auto;
+  }
+  &__close {
+    border: none;
+    background-color: inherit;
+  }
+}
+//***********************************************************
+.list {
+  list-style: none;
+  &__item {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 23px;
+    height: 50px;
+    &:hover {
+      background-color: $item-hover-background-color;
+    }
+  }
+}
+//***********************************************************
+.item {
+  &__image {
+    margin-left: 17px;
+  }
+  &__ticker {
+    margin-left: 12px;
+  }
+  &__name {
+    margin-left: 16px;
+  }
+}
