@@ -1,5 +1,4 @@
 const fetchCurrenciesRequest = () => {
-  console.log('fetch from actions');
   return {
     type: 'FETCH_CURRENCIES_REQUEST',
   };
@@ -19,8 +18,24 @@ const fetchCurrenciesFailure = (err) => {
   };
 };
 
+const inputChangerSearchShow = () => {
+  return {
+    type: 'INPUT_CHANGER_SEARCH_SHOW',
+    payload: true,
+  };
+};
+
+const inputChangerSearchHide = () => {
+  return {
+    type: 'INPUT_CHANGER_SEARCH_HIDE',
+    payload: true,
+  };
+};
+
 export {
   fetchCurrenciesFailure,
   fetchCurrenciesRequest,
   fetchCurrenciesSuccess,
+  inputChangerSearchShow,
+  inputChangerSearchHide,
 };
