@@ -1,28 +1,25 @@
+import updateApp from './app';
+import updateExchangeBlock from './exchange-block';
+import updateInputChanger from './input-changer';
+import updateOutputChanger from './output-changer';
+
 const initialState = {
-  listCurrencies: null,
-  inputChanger: {
-    amountMoney: 0.023,
-    searchInput: 'etheri',
-    isHover: false,
-    currentCurrency: {},
-    minimalExchangeAmount: null,
-  },
   outputChanger: {
     amountMoney: 0.023,
     searchInput: 'etheri',
     isHover: false,
     currentCurrency: {},
-    minimalExchangeAmount: null,
+    estimatedExchangeAmount: null,
   },
 };
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'HELLO':
-      console.log('hello from reducer');
-    default:
-      return state;
-  }
+const reducer = (state, action) => {
+  return {
+    app: updateApp(),
+    inputChanger: updateInputChanger(),
+    outputChanger: updateOutputChanger(),
+    exchangeBlock: updateExchangeBlock(),
+  };
 };
 
 export default reducer;
