@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ExchangeBlock from '../exchange-block';
 import Exchanger from '../exchanger';
 import './app.scss';
+import { connect } from 'react-redux';
+import { hello } from '../../actions';
 
-const App = () => {
+const App = ({ store, hello }) => {
+  hello();
+  console.log(store);
+
   return (
     <div className="crypto">
       <h1 className="crypto__header crypto-header">
@@ -22,4 +27,12 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = (store) => {
+  return { store };
+};
+
+const mapDispatchToProps = {
+  hello,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
