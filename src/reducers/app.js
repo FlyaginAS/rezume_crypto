@@ -28,6 +28,7 @@ const updateApp = (state, action) => {
       };
 
     default:
+      console.log('default');
       return state.app;
   }
 };

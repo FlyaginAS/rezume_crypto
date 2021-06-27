@@ -15,10 +15,10 @@ const initialState = {
 
 const reducer = (state, action) => {
   return {
-    app: updateApp(),
-    inputChanger: updateInputChanger(),
-    outputChanger: updateOutputChanger(),
-    exchangeBlock: updateExchangeBlock(),
+    app: updateApp(state, action),
+    inputChanger: updateInputChanger(state, action),
+    outputChanger: updateOutputChanger(state, action),
+    exchangeBlock: updateExchangeBlock(state, action),
   };
 };
 

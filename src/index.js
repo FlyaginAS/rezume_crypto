@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ErrorBoundry from './components/error-boundry';
 import ApiService from './services';
-import { ApiServiceProvider } from './components/api-service-context/';
+import ApiContext from './components/api-service-context/';
 import store from './store';
 
 const apiService = new ApiService();
@@ -14,11 +14,11 @@ const apiService = new ApiService();
 ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundry>
-      <ApiServiceProvider value={apiService}>
+      <ApiContext.Provider value={apiService}>
         <Router>
           <App />
         </Router>
-      </ApiServiceProvider>
+      </ApiContext.Provider>
     </ErrorBoundry>
   </Provider>,
   document.querySelector('#root')

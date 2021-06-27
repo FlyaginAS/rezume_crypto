@@ -1,6 +1,5 @@
 import React from 'react';
 
-const { Provider: ApiServiceProvider, Consumer: ApiServiceConsumer } =
-  React.createContext();
+const ApiContext = React.createContext();
 
-export { ApiServiceConsumer, ApiServiceProvider };
+export default ApiContext;

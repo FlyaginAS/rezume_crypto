@@ -1,6 +1,3 @@
-import {
-  ApiServiceConsumer,
-  ApiServiceProvider,
-} from './api-service-context';
+import ApiContext from './api-service-context';
 
-export { ApiServiceConsumer, ApiServiceProvider };
+export default ApiContext;
