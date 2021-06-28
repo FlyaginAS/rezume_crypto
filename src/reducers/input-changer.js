@@ -20,6 +20,11 @@ const updateInputChanger = (state, action) => {
         ...state.inputChanger,
         searchShow: false,
       };
+    case 'INPUT_CHANGER_SEARCH_CHANGE':
+      return {
+        ...state.inputChanger,
+        searchInput: action.payload,
+      };
 
     default:
       return state.inputChanger;

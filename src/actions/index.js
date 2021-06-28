@@ -32,10 +32,18 @@ const inputChangerSearchHide = () => {
   };
 };
 
+const inputChangerSearchChange = (value) => {
+  return {
+    type: 'INPUT_CHANGER_SEARCH_CHANGE',
+    payload: value,
+  };
+};
+
 export {
   fetchCurrenciesFailure,
   fetchCurrenciesRequest,
   fetchCurrenciesSuccess,
   inputChangerSearchShow,
   inputChangerSearchHide,
+  inputChangerSearchChange,
 };

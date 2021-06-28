@@ -6,6 +6,8 @@ const Exchanger = ({
   hover,
   onSearchClick,
   onCloseClick,
+  onSearchChange,
+  searchInput,
 }) => {
   const listElements = list.map((item) => {
     return (
@@ -23,7 +25,11 @@ const Exchanger = ({
 
   const input = (
     <div className="exchanger__input-value input-value">
-      <span className="input-value__value">0.033</span>
+      <input
+        type="number"
+        className="input-value__value"
+        value="0.333"
+      />
       <div onClick={onSearchClick}>
         <img
           className="input-value__image-ticker"
@@ -43,7 +49,13 @@ const Exchanger = ({
   const searchAndList = (
     <React.Fragment>
       <div className="exchanger__input-search input-search">
-        <span className="input-search__value">Search</span>
+        <input
+          type="text"
+          className="input-search__value"
+          value={searchInput}
+          placeholder="Search"
+          onChange={(evt) => onSearchChange(evt.target.value)}
+        />
         <button className="input-search__close">
           <img
             className="input-search__image"

@@ -53,11 +53,17 @@
   border-bottom: 1px solid #e3ebef;
   height: 50px;
   &__value {
+    border: none;
+    background-color: inherit;
     font-size: 16px;
     line-height: 23px;
     color: #80a2b6;
     margin-left: 16px;
     margin-right: auto;
+    &:focus {
+      border: none;
+      outline: none;
+    }
   }
   &__close {
     border: none;

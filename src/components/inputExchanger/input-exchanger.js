@@ -4,25 +4,39 @@ import Exchanger from '../exchanger';
 import {
   inputChangerSearchShow,
   inputChangerSearchHide,
+  inputChangerSearchChange,
 } from '../../actions';
 
 const InputExchanger = ({
   searchShow,
+  searchInput,
+  listCurrencies,
   inputChangerSearchShow,
   inputChangerSearchHide,
-  list,
+  inputChangerSearchChange,
 }) => {
   const onSearchClick = () => inputChangerSearchShow();
   const onCloseClick = () => inputChangerSearchHide();
 
-  console.log(list);
+  const filterList = () => {
+    let filtered = [];
 
+    filtered = listCurrencies.filter((item) => {
+      return item.name.toLowerCase().includes(searchInput);
+    });
+
+    filtered.length = 5;
+
+    return filtered;
+  };
   return (
     <Exchanger
-      list={list}
+      list={filterList()}
       hover={searchShow}
       onSearchClick={onSearchClick}
       onCloseClick={onCloseClick}
+      searchInput={searchInput}
+      onSearchChange={(value) => inputChangerSearchChange(value)}
     />
   );
 };
@@ -31,13 +45,15 @@ const mapStateToProps = (state) => {
   return {
     listCurrencies: state.app.listCurrencies,
     searchShow: state.inputChanger.searchShow,
-    list: state.app.listCurrencies,
+    searchInput: state.inputChanger.searchInput,
+    filteredList: state.inputChanger.filteredList,
   };
 };
 
 const mapDispatchToProps = {
   inputChangerSearchShow,
   inputChangerSearchHide,
+  inputChangerSearchChange,
 };
 
 export default connect(
