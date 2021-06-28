@@ -1,7 +1,26 @@
 import React from 'react';
 import './exchanger.scss';
 
-const Exchanger = ({ list, hover, onSearchClick, onCloseClick }) => {
+const Exchanger = ({
+  list = [],
+  hover,
+  onSearchClick,
+  onCloseClick,
+}) => {
+  const listElements = list.map((item) => {
+    return (
+      <li className="list__item item" key={item.image}>
+        <img
+          className="item__image"
+          src={item.image}
+          alt="item.name"
+        />
+        <span className="item__ticker">{item.ticker} </span>
+        <span className="item__name"> {item.name}</span>
+      </li>
+    );
+  });
+
   const input = (
     <div className="exchanger__input-value input-value">
       <span className="input-value__value">0.033</span>
@@ -20,6 +39,7 @@ const Exchanger = ({ list, hover, onSearchClick, onCloseClick }) => {
       </div>
     </div>
   );
+
   const searchAndList = (
     <React.Fragment>
       <div className="exchanger__input-search input-search">
@@ -33,23 +53,7 @@ const Exchanger = ({ list, hover, onSearchClick, onCloseClick }) => {
           />
         </button>
       </div>
-      <ul className="exchanger__list list">
-        <li className="list__item item">
-          <img className="item__image" src={''} alt="img" />
-          <span className="item__ticker">ETH </span>
-          <span className="item__name"> Etherium</span>
-        </li>
-        <li className="list__item item">
-          <img className="item__image" src={''} alt="img" />
-          <span className="item__ticker">ETH </span>
-          <span className="item__name"> Etherium</span>
-        </li>
-        <li className="list__item item">
-          <img className="item__image" src={''} alt="img" />
-          <span className="item__ticker">ETH </span>
-          <span className="item__name"> Etherium</span>
-        </li>
-      </ul>
+      <ul className="exchanger__list list">{listElements}</ul>
     </React.Fragment>
   );
 

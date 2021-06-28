@@ -7,17 +7,19 @@ import {
 } from '../../actions';
 
 const InputExchanger = ({
-  listCurrencies,
   searchShow,
   inputChangerSearchShow,
   inputChangerSearchHide,
+  list,
 }) => {
   const onSearchClick = () => inputChangerSearchShow();
   const onCloseClick = () => inputChangerSearchHide();
 
+  console.log(list);
+
   return (
     <Exchanger
-      list={listCurrencies}
+      list={list}
       hover={searchShow}
       onSearchClick={onSearchClick}
       onCloseClick={onCloseClick}
@@ -29,6 +31,7 @@ const mapStateToProps = (state) => {
   return {
     listCurrencies: state.app.listCurrencies,
     searchShow: state.inputChanger.searchShow,
+    list: state.app.listCurrencies,
   };
 };
 
