@@ -28,7 +28,8 @@ const Exchanger = ({
       <input
         type="number"
         className="input-value__value"
-        value="0.333"
+        value={'0.333'}
+        onChange={() => {}}
       />
       <div onClick={onSearchClick}>
         <img

@@ -2,7 +2,7 @@ const updateInputChanger = (state, action) => {
   if (state === undefined) {
     return {
       amountMoney: 0.023,
-      searchInput: 'etheri',
+      searchInput: '',
       searchShow: false,
       currentCurrency: {},
       minimalExchangeAmount: null,

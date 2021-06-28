@@ -18,6 +18,8 @@ const fetchCurrenciesFailure = (err) => {
   };
 };
 
+//inputChanger***************************************************
+
 const inputChangerSearchShow = () => {
   return {
     type: 'INPUT_CHANGER_SEARCH_SHOW',
@@ -38,6 +40,27 @@ const inputChangerSearchChange = (value) => {
     payload: value,
   };
 };
+//outputChanger*******************************************
+const outputChangerSearchShow = () => {
+  return {
+    type: 'OUTPUT_CHANGER_SEARCH_SHOW',
+    payload: true,
+  };
+};
+
+const outputChangerSearchHide = () => {
+  return {
+    type: 'OUTPUT_CHANGER_SEARCH_HIDE',
+    payload: true,
+  };
+};
+
+const outputChangerSearchChange = (value) => {
+  return {
+    type: 'OUTPUT_CHANGER_SEARCH_CHANGE',
+    payload: value,
+  };
+};
 
 export {
   fetchCurrenciesFailure,
@@ -46,4 +69,7 @@ export {
   inputChangerSearchShow,
   inputChangerSearchHide,
   inputChangerSearchChange,
+  outputChangerSearchChange,
+  outputChangerSearchHide,
+  outputChangerSearchShow,
 };
